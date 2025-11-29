@@ -98,6 +98,10 @@ namespace YARG.Core.Game
             [SettingRange(min: 0f, max: 0.05f)]
             public double SustainDropLeniency = DEFAULT_SUSTAIN_DROP_LENIENCY;
 
+            [SettingType(SettingType.MillisecondInput)]
+            [SettingRange(min: 0f, max: 0.2f)]
+            public double PerfectWindow = 0.05;
+
             [SettingType(SettingType.Special)]
             public HitWindowPreset HitWindow = new()
             {

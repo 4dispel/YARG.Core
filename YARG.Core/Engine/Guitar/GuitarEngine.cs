@@ -199,7 +199,7 @@ namespace YARG.Core.Engine.Guitar
                 return;
             }
 
-            note.SetHitState(true, true);
+            note.SetHitState(true, true, CurrentTime);
 
             // Detect if the last note(s) were skipped
             bool skipped = SkipPreviousNotes(note);

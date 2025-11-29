@@ -186,7 +186,7 @@ namespace YARG.Core.Engine.ProKeys
                 }
             }
 
-            note.SetHitState(true, false);
+            note.SetHitState(true, false, CurrentTime);
 
             KeyPressTimes[note.Key] = DEFAULT_PRESS_TIME;
 

@@ -109,7 +109,7 @@ namespace YARG.Core.Engine.Drums
                 return;
             }
 
-            note.SetHitState(true, false);
+            note.SetHitState(true, false, CurrentTime);
 
             // Detect if the last note(s) were skipped
             bool skipped = SkipPreviousNotes(note.ParentOrSelf);

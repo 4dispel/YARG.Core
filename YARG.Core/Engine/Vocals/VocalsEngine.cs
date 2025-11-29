@@ -119,7 +119,7 @@ namespace YARG.Core.Engine.Vocals
 
         protected override void HitNote(VocalNote note)
         {
-            note.SetHitState(true, false);
+            note.SetHitState(true, false, CurrentTime);
 
             if (note.IsPercussion)
             {

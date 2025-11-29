@@ -91,8 +91,9 @@ namespace YARG.Core.Chart
         /// </summary>
         public AllNotesEnumerator AllNotes => new((TNote) this);
 
-        public bool WasHit;
-        public bool WasMissed;
+        public bool   WasHit;
+        public bool   WasMissed;
+        public double HitTime;
 
         protected Note(NoteFlags flags, double time, double timeLength, uint tick, uint tickLength)
             : base(time, timeLength, tick, tickLength)
@@ -118,14 +119,15 @@ namespace YARG.Core.Chart
             _childNotes.Add(note);
         }
 
-        public void SetHitState(bool hit, bool includeChildren)
+        public void SetHitState(bool hit, bool includeChildren, double hitTime)
         {
             WasHit = hit;
+            HitTime = hitTime;
             if (!includeChildren) return;
 
             foreach (var childNote in _childNotes)
             {
-                childNote.SetHitState(hit, true);
+                childNote.SetHitState(hit, true, hitTime);
             }
         }
 
