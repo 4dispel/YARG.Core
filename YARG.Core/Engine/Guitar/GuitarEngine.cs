@@ -122,6 +122,12 @@ namespace YARG.Core.Engine.Guitar
                 return;
             }
 
+            // Don't overstrum when overstrums are disabled
+            if (EngineParameters.NoOverstrums)
+            {
+                return;
+            }
+
             // Cancel overstrum if past last note and no active sustains
             if (NoteIndex >= Chart.Notes.Count && ActiveSustains.Count == 0)
             {

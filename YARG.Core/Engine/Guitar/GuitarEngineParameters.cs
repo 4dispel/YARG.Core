@@ -9,15 +9,16 @@ namespace YARG.Core.Engine.Guitar
         public readonly double HopoLeniency;
         public readonly double StrumLeniency;
         public readonly double StrumLeniencySmall;
-        public readonly bool InfiniteFrontEnd;
-        public readonly bool AntiGhosting;
-        public readonly bool SoloTaps;
-        public readonly bool NoStarPowerOverlap;
+        public readonly bool   InfiniteFrontEnd;
+        public readonly bool   AntiGhosting;
+        public readonly bool   SoloTaps;
+        public readonly bool   NoStarPowerOverlap;
+        public readonly bool   NoOverstrums;
 
         public GuitarEngineParameters(HitWindowSettings hitWindow, int maxMultiplier, double spWhammyBuffer,
             double sustainDropLeniency, float[] starMultiplierThresholds, float[] soloBonusStarMultiplierThresholds, double hopoLeniency, double strumLeniency,
             double strumLeniencySmall, bool infiniteFrontEnd, bool antiGhosting, bool soloTaps, bool noStarPowerOverlap,
-            bool enableLanes)
+            bool enableLanes, bool noOverstrums)
             : base(hitWindow, maxMultiplier, spWhammyBuffer, sustainDropLeniency, starMultiplierThresholds, soloBonusStarMultiplierThresholds, enableLanes)
         {
             HopoLeniency = hopoLeniency;
@@ -30,6 +31,8 @@ namespace YARG.Core.Engine.Guitar
 
             SoloTaps = soloTaps;
             NoStarPowerOverlap = noStarPowerOverlap;
+
+            NoOverstrums = noOverstrums;
         }
 
         public GuitarEngineParameters(ref FixedArrayStream stream, int version)

@@ -100,6 +100,9 @@ namespace YARG.Core.Game
             [SettingType(SettingType.Toggle)]
             public bool EnableLanes = true;
 
+            [SettingType(SettingType.Toggle)]
+            public bool NoOverstrums = false;
+
             [SettingType(SettingType.MillisecondInput)]
             [SettingRange(min: 0f)]
             public double HopoLeniency = 0.08;
@@ -159,7 +162,8 @@ namespace YARG.Core.Game
                     AntiGhosting,
                     SoloTaps,
                     NoStarPowerOverlap,
-                    EnableLanes);
+                    EnableLanes,
+                    NoOverstrums);
             }
         }
 
